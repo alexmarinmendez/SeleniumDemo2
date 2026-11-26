@@ -29,6 +29,7 @@ public class LoginSteps {
 
         //hacer clic en el botón
         driver.findElement(By.id("login-button")).click();
+        //driver.findElement(By.cssSelector("input[type='submit-button'")).click();
     }
 
     @Then("Se verifica que el mensaje de error es {string}")
