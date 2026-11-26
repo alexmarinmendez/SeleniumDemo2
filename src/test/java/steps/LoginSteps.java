@@ -15,8 +15,7 @@ public class LoginSteps {
 
     @Given("Se navega a la pagina de Login")
     public void navegarPagina() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        driver.get("https://www.saucedemo.com/");
     }
 
     @When("Se completa el formulario con el username {string} y el password {string}")
