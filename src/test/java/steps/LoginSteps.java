@@ -4,6 +4,7 @@ import io.cucumber.java.PendingException;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -34,7 +35,7 @@ public class LoginSteps {
 
     @Then("Se verifica que el mensaje de error es {string}")
     public void verificarMensajeError(String mensajeEsperado) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        final var mensajeError = driver.findElement(By.cssSelector("h3[data-test='error']"));
+        Assertions.assertEquals(mensajeEsperado, mensajeError.getText());
     }
 }
