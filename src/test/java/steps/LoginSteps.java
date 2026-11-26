@@ -4,6 +4,7 @@ import io.cucumber.java.PendingException;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class LoginSteps {
@@ -20,8 +21,14 @@ public class LoginSteps {
 
     @When("Se completa el formulario con el username {string} y el password {string}")
     public void completarFormulario(String username, String password) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        //escribir el username en el input
+        driver.findElement(By.id("user-name")).sendKeys(username);
+
+        //escribir el password en el input
+        driver.findElement(By.id("password")).sendKeys(password);
+
+        //hacer clic en el botón
+        driver.findElement(By.id("login-button")).click();
     }
 
     @Then("Se verifica que el mensaje de error es {string}")
