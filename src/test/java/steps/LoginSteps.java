@@ -4,8 +4,14 @@ import io.cucumber.java.PendingException;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.WebDriver;
 
 public class LoginSteps {
+    private final WebDriver driver;
+
+    public LoginSteps(GlobalSteps global) {
+        this.driver = global.driver;
+    }
 
     @Given("Se navega a la pagina de Login")
     public void navegarPagina() {
